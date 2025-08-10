@@ -1,1 +1,1 @@
-
+# MindMend - AI-Powered Wellness Tracking

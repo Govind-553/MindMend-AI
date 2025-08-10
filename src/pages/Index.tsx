@@ -5,6 +5,7 @@ import { QuickStats } from "@/components/QuickStats";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bell, Settings, User, Play } from "lucide-react";
+import MindMendLogo from "/img/MindMendLogo.png";
 
 const Index = () => {
   // Mock data for demo
@@ -41,8 +42,8 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-gradient-ocean rounded-lg shadow-glow" />
-              <h1 className="text-2xl font-bold text-foreground">WellnessFlow</h1>
+              <img src={MindMendLogo} alt="MindMend Logo" className="w-20 h-12 rounded-full" />
+              <h1 className="text-2xl font-bold text-foreground">MindMend AI</h1>
             </div>
             
             <div className="flex items-center space-x-4">
