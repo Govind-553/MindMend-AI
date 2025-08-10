@@ -8,35 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Wellness App Color Palette */
+    --background: 220 25% 97%;
+    --foreground: 215 25% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 40% 98%;
+    --card-foreground: 215 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* Ocean-inspired primary colors */
+    --primary: 200 85% 45%;
     --primary-foreground: 210 40% 98%;
+    --primary-light: 200 75% 65%;
+    --primary-glow: 200 85% 75%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Calming secondary palette */
+    --secondary: 165 25% 85%;
+    --secondary-foreground: 215 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft muted tones */
+    --muted: 210 20% 92%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Wellness accent colors */
+    --accent: 155 45% 55%;
+    --accent-foreground: 210 40% 98%;
+    --accent-light: 155 35% 75%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Status colors for wellness tracking */
+    --wellness-excellent: 145 70% 50%;
+    --wellness-good: 60 85% 55%;
+    --wellness-moderate: 35 85% 55%;
+    --wellness-poor: 0 75% 55%;
+
+    --destructive: 0 75% 55%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 200 85% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Wellness-specific design tokens */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-calm: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow) / 0.3), hsl(var(--accent-light) / 0.3));
+    
+    /* Glass morphism effects */
+    --glass-bg: hsla(210, 40%, 98%, 0.8);
+    --glass-border: hsla(215, 20%, 88%, 0.3);
+    
+    /* Shadow system */
+    --shadow-soft: 0 4px 20px hsla(var(--primary) / 0.1);
+    --shadow-glow: 0 8px 32px hsla(var(--primary-glow) / 0.2);
+    --shadow-card: 0 2px 12px hsla(215, 25%, 15% / 0.08);
+    
+    /* Animation timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
