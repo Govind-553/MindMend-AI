@@ -8,20 +8,18 @@ AI-powered Wellness Monitoring System for real-time mental well-being analysis u
 
 ## Project Structure
 
-MindMend-AI/
-│
-├── backend/
-│ ├── app.py # Flask backend application
-│ ├── analyzers/ # Facial, Speech, Keystroke analyzers
-│ ├── generate_dummy_models.py # Create mock models
-│ ├── requirements.txt
-│ └── ...
-│
-├── models/ # Placeholder/dummy model files (.pkl, .h5)
-│
-└── README.md
-
-text
+    MindMend-AI/
+    │
+    ├── backend/
+    │ ├── app.py # Flask backend application
+    │ ├── analyzers/ # Facial, Speech, Keystroke analyzers
+    │ ├── generate_dummy_models.py # Create mock models
+    │ ├── requirements.txt
+    │ └── ...
+    │
+    ├── models/ # Placeholder/dummy model files (.pkl, .h5)
+    │
+    └── README.md
 
 ---
 
@@ -29,47 +27,34 @@ text
 
 ### 1. Clone the repository
 
-git clone https://github.com/yourusername/MindMend-AI.git
-cd MindMend-AI/backend
+    git clone https://github.com/yourusername/MindMend-AI.git
+    cd MindMend-AI/backend
 
-text
 
 ### 2. Create & activate a virtual environment
 
 <details>
 <summary>Windows (PowerShell)</summary>
 
-python -m venv venv
-.\venv\Scripts\activate
+    python -m venv venv
+    .\venv\Scripts\activate
 
-text
 </details>
 
-<details>
-<summary>macOS/Linux</summary>
-
-python3 -m venv venv
-source venv/bin/activate
-
-text
-</details>
 
 ### 3. Install dependencies
 
 (Mock demo does not require TensorFlow/ML libraries)
 
-pip install -r requirements.txt
-
-text
+    pip install -r requirements.txt
 
 <sub>For real model integration, install TensorFlow and other required ML libraries.</sub>
 
 ### 4. Generate dummy models
 
-cd backend
-python generate_dummy_models.py
+   cd backend
+   python generate_dummy_models.py
 
-text
 This creates mock model files in the `models/` directory:
 - `fer2013_model.h5` – Dummy FER2013 model
 - `keystroke_model.pkl` – Mock keystroke dynamics model
@@ -78,10 +63,10 @@ This creates mock model files in the `models/` directory:
 
 ### 5. Run the backend server
 
-python app.py
+    python app.py
 
-text
-Server runs at: http://127.0.0.1:5000  
+
+    Server runs at: http://127.0.0.1:5000  
 You’ll see logs confirming that mock predictions are being used.
 
 ---
