@@ -31,7 +31,7 @@ load_dotenv()
 # ============================================================
 
 logging.basicConfig(
-    level=getattr(logging, os.getenv('LOG_LEVEL', 'INFO')),
+    level=getattr(logging, os.getenv('LOG_LEVEL', 'INFO').upper()), # Add .upper() here
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)

@@ -1,34 +1,25 @@
-import h5py
 import pickle
+import os
+import h5py
 import numpy as np
-from sklearn.preprocessing import StandardScaler
 
-# === Dummy Classes for Pickling ===
-class DummyKeystrokeModel:
-    def predict(self, X):
-        return ["focused"] * len(X)
+models_dir = "../../models"
+os.makedirs(models_dir, exist_ok=True)
 
-class DummySpeechEmotionModel:
-    def predict(self, X):
-        return ["happy"] * len(X)
+# Dummy facial model (.h5 just to exist, no TF needed)
+with h5py.File(os.path.join(models_dir, "fer2013_model.h5"), 'w') as f:
+    f.create_dataset("dummy_data", data=np.zeros((1, 1)))
 
-# === 1. Dummy FER2013 model (.h5) ===
-with h5py.File("models/fer2013_model.h5", "w") as f:
-    f.create_dataset("weights", data=np.random.rand(64, 64))
-    f.attrs["note"] = "Dummy FER2013 model for hackathon demo"
+# Dummy keystroke model (dict, not class)
+with open(os.path.join(models_dir, "keystroke_model.pkl"), "wb") as f:
+    pickle.dump({"type": "dummy_keystroke"}, f)
 
-# === 2. Dummy Keystroke Model (.pkl) ===
-with open("models/keystroke_model.pkl", "wb") as f:
-    pickle.dump(DummyKeystrokeModel(), f)
+# Dummy speech model (dict, not class)
+with open(os.path.join(models_dir, "speech_emotion_model.pkl"), "wb") as f:
+    pickle.dump({"type": "dummy_speech"}, f)
 
-# === 3. Dummy Speech Emotion Model (.pkl) ===
-with open("models/speech_emotion_model.pkl", "wb") as f:
-    pickle.dump(DummySpeechEmotionModel(), f)
+# Dummy speech scaler (dict, not real scaler)
+with open(os.path.join(models_dir, "speech_scaler.pkl"), "wb") as f:
+    pickle.dump({"type": "dummy_scaler"}, f)
 
-# === 4. Dummy Speech Scaler (.pkl) ===
-scaler = StandardScaler()
-scaler.fit(np.random.rand(10, 5))  # Fit on random data
-with open("models/speech_scaler.pkl", "wb") as f:
-    pickle.dump(scaler, f)
-
-print("✅ All dummy models generated successfully!")
+print("Dummy models generated successfully.")
