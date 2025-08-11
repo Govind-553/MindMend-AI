@@ -1,28 +1,19 @@
-# 🧠 MindMend AI  
+# 🧠 MindMend AI
 
-**AI-Powered Wellness Monitoring System** for real-time assessment of mental well-being using **facial expressions**, **keystroke patterns**, and **speech emotion cues**.
+AI-powered Wellness Monitoring System for real-time mental well-being analysis using facial expressions, keystroke dynamics, and speech emotion cues.
 
-Currently, MindMend AI runs in **mock prediction mode** for demonstration purposes — ready for future integration with **TensorFlow**, **Keras**, and **Scikit-Learn** trained models.
-
----
-
-## 🚀 Features  
-- **Facial Emotion Detection** *(FER2013 CNN architecture – placeholder for now)*  
-- **Keystroke Dynamics Analysis** for mood inference  
-- **Speech Emotion Recognition** using audio cues  
-- **Flask-based API Backend** for easy integration  
-- **Modular Architecture** for swapping mock and real models  
-- **Lightweight Demo Mode** — no heavy ML dependencies required  
+*Currently in mock prediction mode for demos—structure supports future integration with TensorFlow, Keras, and Scikit-Learn.*
 
 ---
 
-## 📂 Project Structure  
+## Project Structure
+
 MindMend-AI/
 │
 ├── backend/
 │ ├── app.py # Flask backend application
 │ ├── analyzers/ # Facial, Speech, Keystroke analyzers
-│ ├── generate_dummy_models.py # Script to create mock models
+│ ├── generate_dummy_models.py # Create mock models
 │ ├── requirements.txt
 │ └── ...
 │
@@ -34,90 +25,105 @@ text
 
 ---
 
-## ⚙️ Setup Instructions  
+## Setup Instructions
 
-### 1️⃣ Clone the repository  
+### 1. Clone the repository
+
 git clone https://github.com/yourusername/MindMend-AI.git
 cd MindMend-AI/backend
 
 text
 
-### 2️⃣ Create & activate a virtual environment  
-#### Windows (PowerShell)  
+### 2. Create & activate a virtual environment
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
 python -m venv venv
 .\venv\Scripts\activate
 
 text
-#### macOS/Linux  
+</details>
+
+<details>
+<summary>macOS/Linux</summary>
+
 python3 -m venv venv
 source venv/bin/activate
 
 text
+</details>
 
-### 3️⃣ Install dependencies  
-*(Mock mode doesn’t require TensorFlow ML libraries yet)*  
+### 3. Install dependencies
+
+(Mock demo does not require TensorFlow/ML libraries)
+
 pip install -r requirements.txt
 
 text
-> When integrating real models, you will need **TensorFlow** and other ML libraries.  
 
-### 4️⃣ Generate dummy models  
+<sub>For real model integration, install TensorFlow and other required ML libraries.</sub>
+
+### 4. Generate dummy models
+
 cd backend
 python generate_dummy_models.py
 
 text
-This will create mock model files in the `models/` directory:  
-- `fer2013_model.h5` – Dummy FER2013 model  
-- `keystroke_model.pkl` – Mock keystroke dynamics model  
-- `speech_emotion_model.pkl` – Mock speech emotion model  
-- `speech_scaler.pkl` – Mock scaler for speech preprocessing  
+This creates mock model files in the `models/` directory:
+- `fer2013_model.h5` – Dummy FER2013 model
+- `keystroke_model.pkl` – Mock keystroke dynamics model
+- `speech_emotion_model.pkl` – Mock speech emotion model
+- `speech_scaler.pkl` – Mock scaler for speech preprocessing
 
-### 5️⃣ Run the backend server  
+### 5. Run the backend server
+
 python app.py
 
 text
-Server runs at:  
-http://127.0.0.1:5000
-
-text
-You’ll see logs confirming that **mock predictions** are being used.
+Server runs at: http://127.0.0.1:5000  
+You’ll see logs confirming that mock predictions are being used.
 
 ---
 
-## 🛠 Mock Prediction Mode  
-In current demo mode:  
-- Facial, keystroke, and speech analysis **generate random emotions**  
-- `.pkl` and `.h5` files act as **placeholders**  
-- Executes quickly with **no large ML dependencies**  
+## Mock Prediction Mode
+
+- Facial, keystroke, and speech analyzers generate random emotions.
+- Placeholder `.pkl` / `.h5` model files used.
+- Runs quickly—no heavy ML dependencies.
 
 ---
 
-## 🔜 Future Model Replacements  
-- Real **TensorFlow/Keras** CNN for **Facial Emotion Recognition**  
-- **Scikit-learn** models for **Keystroke** & **Speech Analysis**  
-- Proper **feature extraction, preprocessing, and scaling pipelines**  
+## Future Model Replacements
+
+- TensorFlow/Keras CNN for Facial Emotion Recognition
+- Scikit-learn models for Keystroke & Speech Analysis
+- Proper pipelines for feature extraction, preprocessing, and scaling
 
 ---
 
-## 📌 Roadmap  
-- [ ] Replace mock models with trained versions  
-- [ ] Integrate real FER2013 CNN model for facial recognition  
-- [ ] Fine-tune speech and keystroke models for improved accuracy  
-- [ ] Deploy to cloud platforms (**AWS**, **GCP**)  
-- [ ] Implement real-time data streaming for continuous monitoring  
+## Roadmap
+
+- [ ] Replace mock models with trained versions
+- [ ] Integrate real FER2013 CNN for facial recognition
+- [ ] Fine-tune speech and keystroke models
+- [ ] Deploy to cloud (AWS/GCP)
+- [ ] Real-time data streaming
 
 ---
 
-## 👥 Team  
-| Name               | Role                                      |
-|--------------------|-------------------------------------------|
-| **Govind Choudhari** | Team Lead, Full-Stack Developer          |
-| **Abhiruchi Kunte**  | AI/ML Developer, Model Tuning            |
-| **Sahil Kale**       | UI/UX Designer, Frontend Developer       |
-| **Nishank Jain**     | Backend Developer & Integration          |
+## Team
+
+| Name              | Role                                 |
+|-------------------|--------------------------------------|
+| Govind Choudhari  | Team Lead, Full-Stack Developer      |
+| Abhiruchi Kunte   | AI/ML Developer, Model Tuning        |
+| Sahil Kale        | UI/UX Designer, Frontend Developer   |
+| Nishank Jain      | Backend Developer & Integration      |
 
 ---
 
-## ⚠️ Disclaimer  
-This project is a **MVP/Prototype** built for hackathon/demo purposes.  
-It is **not intended for medical diagnosis** or real-time mental health monitoring without further research, validation, and clinical testing.
+## Disclaimer
+
+*Prototype for hackathon/demo purposes only.  
+Not intended for medical diagnosis or clinical use without further research, validation, and testing.*
