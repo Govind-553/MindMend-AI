@@ -1,123 +1,105 @@
-# MindMend AI 🧠💡
+🧠 MindMend AI
+AI-Powered Wellness Monitoring System for real-time assessment of mental well-being using facial expressions, keystroke patterns, and speech emotion cues.
 
-MindMend AI is an AI-powered **Wellness Monitoring System** that analyzes **facial expressions**, **keystroke patterns**, and **speech emotion cues** to assess mental well-being in real-time.  
-Currently, the system uses **mock prediction models** for demonstration purposes, but the structure is ready for full integration with **TensorFlow** and other ML frameworks in later stages.
+Currently, MindMend AI runs in mock prediction mode for demonstration purposes — ready for future integration with TensorFlow, Keras, and Scikit-Learn trained models.
 
----
+🚀 Features
+Facial Emotion Detection (FER2013 CNN architecture – placeholder for now)
 
-## 🚀 Features
-- Facial emotion detection (FER2013 architecture – placeholder for now).
-- Keystroke dynamics analysis for mood inference.
-- Speech emotion recognition.
-- Flask-based backend for API services.
-- Modular architecture for easy model replacement.
-- Mock predictions for hackathon/demo purposes (no heavy ML dependencies required).
+Keystroke Dynamics Analysis for mood inference
 
----
+Speech Emotion Recognition using audio cues
 
-## 📦 Project Structure
+Flask-based API Backend for easy integration
+
+Modular Architecture for swapping mock and real models
+
+Lightweight Demo Mode — no heavy ML dependencies required
+
+📂 Project Structure
+text
 MindMend-AI/
 │
 ├── backend/
-│ ├── app.py # Main Flask application
-│ ├── analyzers/ # Facial, Speech, Keystroke analyzers
-│ ├── generate_dummy_models.py # Script to create mock models
-│ ├── requirements.txt
-│ └── ...
+│   ├── app.py                  # Flask backend application
+│   ├── analyzers/              # Facial, Speech, Keystroke analyzers
+│   ├── generate_dummy_models.py # Script to create mock models
+│   ├── requirements.txt
+│   └── ...
 │
-├── models/ # Saved model files (.pkl, .h5) – currently dummy
+├── models/                     # Placeholder/dummy model files (.pkl, .h5)
 │
 └── README.md
-
-yaml
-Copy
-Edit
-
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone the repository
-```bash
+⚙️ Setup Instructions
+1️⃣ Clone the repository
+bash
 git clone https://github.com/yourusername/MindMend-AI.git
 cd MindMend-AI/backend
 2️⃣ Create & activate a virtual environment
+Windows (PowerShell)
 bash
-Copy
-Edit
-# Windows (PowerShell)
 python -m venv venv
 .\venv\Scripts\activate
-
-# macOS/Linux
+macOS/Linux
+bash
 python3 -m venv venv
 source venv/bin/activate
 3️⃣ Install dependencies
-Since we are using mock models, you do not need TensorFlow or heavy ML libraries for now.
-However, the backend still uses core dependencies like Flask, NumPy, etc.
+(Mock mode doesn’t require TensorFlow or heavy ML libraries yet)
 
 bash
-Copy
-Edit
 pip install -r requirements.txt
-(If you later replace with real models, you'll need to install TensorFlow)
+When integrating real models, you’ll need to install TensorFlow and other ML libraries.
 
 4️⃣ Generate dummy models
-Run this to create placeholder model files in the models directory:
-
 bash
-Copy
-Edit
 cd backend
 python generate_dummy_models.py
-This will generate:
+This will create mock model files in the models directory:
 
-fer2013_model.h5 (dummy file)
+fer2013_model.h5 – Dummy FER2013 model
 
-keystroke_model.pkl (mock keystroke data)
+keystroke_model.pkl – Mock keystroke dynamics model
 
-speech_emotion_model.pkl (mock speech data)
+speech_emotion_model.pkl – Mock speech emotion model
 
-speech_scaler.pkl (mock scaler data)
+speech_scaler.pkl – Mock scaler for speech preprocessing
 
 5️⃣ Run the backend server
 bash
-Copy
-Edit
 python app.py
-The server will start at:
+Server runs at:
 
-cpp
-Copy
-Edit
+text
 http://127.0.0.1:5000
-You should see log messages indicating mock predictions are being used.
+You’ll see logs confirming that mock predictions are being used.
 
 🛠 Mock Prediction Mode
-Right now, MindMend AI does not load real machine learning models — it uses:
+In current demo mode:
 
-Random emotion generation for facial, keystroke, and speech analysis.
+Facial, keystroke, and speech analysis generate random emotions
 
-Lightweight .pkl and .h5 placeholders to mimic real models.
+.pkl and .h5 files act as placeholders
 
-This allows fast demo without installing heavy ML dependencies.
+Fast execution without large ML dependencies
 
-Later, you can replace these mock files with:
+🔜 Future Model Replacements
+Real TensorFlow/Keras CNN for Facial Emotion Recognition
 
-Trained TensorFlow/Keras models for facial emotion recognition.
+Scikit-learn models for Keystroke & Speech Analysis
 
-Scikit-learn models for keystroke & speech analysis.
+Proper feature extraction, preprocessing, and scaling pipelines
 
-Proper pre-processing & scaling pipelines.
+📌 Roadmap
+ Replace mock models with trained versions
 
-📌 Roadmap (Future Scope)
-Replace mock models with trained versions.
+ Integrate real FER2013 CNN model for facial recognition
 
-Integrate real FER2013 CNN model for facial recognition.
+ Fine-tune speech and keystroke models for improved accuracy
 
-Fine-tune speech and keystroke models for accuracy.
+ Deploy to cloud platforms (AWS, GCP)
 
-Deploy to cloud (AWS/GCP).
+ Implement real-time data streaming for continuous monitoring
 
 👥 Team
 Name	Role
@@ -125,7 +107,6 @@ Govind Choudhari	Team Lead, Full-Stack Developer
 Abhiruchi Kunte	AI/ML Developer, Model Tuning
 Sahil Kale	UI/UX Designer, Frontend Developer
 Nishank Jain	Backend Developer & Integration
-
 ⚠️ Disclaimer
-This project is currently a prototype for hackathon/demo purposes.
-It is not intended for medical diagnosis or real-time mental health monitoring without further research, testing, and validation.
+This project is a prototype built for hackathon/demo purposes.
+It is not intended for medical diagnosis or use in real-time mental health monitoring without further research, validation, and clinical testing.
