@@ -1,0 +1,13 @@
+import joblib
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+
+# Dummy classifier for speech emotion
+X = np.random.rand(20, 40)  # 40 MFCC features
+y = np.random.choice(['Happy', 'Sad', 'Angry', 'Neutral'], 20)
+
+clf = RandomForestClassifier()
+clf.fit(X, y)
+
+joblib.dump(clf, "speech_emotion_model.pkl")
+print("speech_emotion_model.pkl saved!")

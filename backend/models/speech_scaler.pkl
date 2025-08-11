@@ -1,0 +1,11 @@
+import joblib
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+
+# Dummy scaler
+X = np.random.rand(20, 40)  # 40 MFCC features
+scaler = StandardScaler()
+scaler.fit(X)
+
+joblib.dump(scaler, "speech_scaler.pkl")
+print("speech_scaler.pkl saved!")

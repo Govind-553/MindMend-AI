@@ -1,0 +1,17 @@
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras.optimizers import Adam
+import numpy as np
+
+# Simple dummy model for 48x48 grayscale images
+model = Sequential([
+    Flatten(input_shape=(48, 48, 1)),
+    Dense(64, activation='relu'),
+    Dense(7, activation='softmax')  # 7 emotions
+])
+
+model.compile(optimizer=Adam(), loss='categorical_crossentropy')
+
+# Save model
+model.save("fer2013_model.h5")
+print("fer2013_model.h5 saved!")
